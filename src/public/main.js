@@ -26,13 +26,10 @@ noteForm.addEventListener('submit', e => {
         description.value
     ) */
 
-    socket.emit('client:newnote', {
-        title: title.value,
-        description: description.value 
-    })
 
-    socket.on('server:newnote', data => {
-        notes.innerHTML += 'new note'
-    })
+    saveNote(title.value, description.value )
+    
+
+ 
 
 })
